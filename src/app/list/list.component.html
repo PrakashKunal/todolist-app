@@ -1,0 +1,28 @@
+<div class="todoListContainer">
+    <h1>TODO List</h1>
+    <div class="todoList"> 
+    <div *ngFor="let task of todos" class="taskContainer">
+    <p class="task-txt">
+        {{ task }}
+    </p>
+    <button class="dlt-btn"
+      (click)="DeleteTask(this.task)"  >
+        Delete
+    </button>
+    </div>
+
+    <div class="todoInputForm">
+    <input class="taskInput"
+    type="text"
+    [(ngModel)]="task"
+    (input)="onChange(task)"
+    id="todo"
+    >
+    <button class="add-btn"
+    type="submit"
+    (click)="AddTask(task)"
+    [disabled]="!isfilled"
+    >Add Task</button>
+    </div>
+</div>
+</div>
